@@ -15,21 +15,27 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class S3Configuration {
 
+    private static final Logger log = LoggerFactory.getLogger(S3Configuration.class);
 
     String bucketName = "data-saver-flux-inst";
 
     @Bean
     public AmazonS3 amazonS3() {
-        AWSCredentials awsCredentials = new BasicAWSCredentials(
-                "AKIAI2GVL2CBQLV67K2A",
-                "rIGfTXhy0JjH6tyTvUUrlMkXYoZbXgoFNpCM+kaZ"
-        );
+        String AWS_ACCESS_KEY_ID = System.getenv("AWS_ACCESS_KEY_ID");
+        String AWS_SECRET_ACCESS_KEY = System.getenv("AWS_SECRET_ACCESS_KEY");
+
+        log.info("Property read access Key = " + AWS_ACCESS_KEY_ID);
+        log.info("Property read secret key = " + AWS_SECRET_ACCESS_KEY);
+
+        AWSCredentials awsCredentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY);
         AmazonS3 s3client = AmazonS3ClientBuilder
                 .standard()
                 .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
