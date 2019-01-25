@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 by STDLabel, Inc. All rights reserved.
+ * Copyright 2019 by STDLabel. All rights reserved.
  *
  * This software is the confidential and proprietary information
  * of STDLabel. Use is subject to license terms.
@@ -9,7 +9,6 @@
  */
 package com.baimurzin.datasaverflux.service;
 
-import com.baimurzin.datasaverflux.config.S3Configuration;
 import com.baimurzin.datasaverflux.config.S3Constant;
 import com.baimurzin.datasaverflux.dto.MessageInDto;
 import com.baimurzin.datasaverflux.service.impl.DownloadFileService;

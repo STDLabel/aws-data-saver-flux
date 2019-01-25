@@ -1,10 +1,8 @@
 package com.baimurzin.datasaverflux.config;
 
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
-import io.netty.channel.nio.NioEventLoopGroup;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
 import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;

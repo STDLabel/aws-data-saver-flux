@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 by STDLabel, Inc. All rights reserved.
+ * Copyright 2018 by STDLabel. All rights reserved.
  *
  * This software is the confidential and proprietary information
  * of STDLabel. Use is subject to license terms.

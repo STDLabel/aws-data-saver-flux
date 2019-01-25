@@ -1,8 +1,8 @@
 /*
- * Copyright 2018 by HireRight, Inc. All rights reserved.
+ * Copyright 2018 by STDLabel. All rights reserved.
  *
  * This software is the confidential and proprietary information
- * of HireRight, Inc. Use is subject to license terms.
+ * of STDLabel. Use is subject to license terms.
  *
  * History:
  * V.Baimurzin 2019-01-24 Created
