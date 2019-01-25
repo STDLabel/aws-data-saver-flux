@@ -1,8 +1,8 @@
 /*
- * Copyright 2018 by HireRight, Inc. All rights reserved.
+ * Copyright 2018 by STDLabel. All rights reserved.
  *
  * This software is the confidential and proprietary information
- * of HireRight, Inc. Use is subject to license terms.
+ * of STDLabel. Use is subject to license terms.
  *
  * History:
  * V.Baimurzin 2019-01-23 Created
@@ -15,12 +15,22 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
+import org.springframework.cloud.aws.messaging.config.annotation.EnableSqs;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.converter.MappingJackson2MessageConverter;
+import org.springframework.messaging.handler.annotation.support.PayloadArgumentResolver;
+import org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver;
+
+import java.util.Collections;
 
 @Configuration
+@EnableSqs
 public class S3Configuration {
 
     private static final Logger log = LoggerFactory.getLogger(S3Configuration.class);
@@ -43,4 +53,5 @@ public class S3Configuration {
                 .build();
         return s3client;
     }
+
 }

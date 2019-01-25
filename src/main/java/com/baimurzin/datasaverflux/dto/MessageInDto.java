@@ -1,8 +1,8 @@
 /*
- * Copyright 2018 by HireRight, Inc. All rights reserved.
+ * Copyright 2018 by STDLabel, Inc. All rights reserved.
  *
  * This software is the confidential and proprietary information
- * of HireRight, Inc. Use is subject to license terms.
+ * of STDLabel. Use is subject to license terms.
  *
  * History:
  * V.Baimurzin 2019-01-24 Created
@@ -52,5 +52,14 @@ public class MessageInDto {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageInDto{" +
+                "accountName='" + accountName + '\'' +
+                ", photoCode='" + photoCode + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
